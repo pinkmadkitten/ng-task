@@ -1,7 +1,8 @@
 <app-search></app-search>
 <app-course *ngFor="let course of coursesList"
             [courseItem]="course"
-            (deleteCourse)="onDelete($event)">
+            (deleteCourse)="onDelete($event)"
+             [appCoursePlate]="course.creationDate">
 </app-course>
 <button type="button"
         (click)="onLoadMore()">

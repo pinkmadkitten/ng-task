@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CourseInterface} from './course.interface';
 
 @Component({
@@ -10,7 +10,7 @@ export class CourseComponent implements OnInit {
   @Input() courseItem: CourseInterface;
   @Output() deleteCourse: EventEmitter<CourseInterface> = new EventEmitter<CourseInterface>();
 
-  constructor() {
+  constructor(private el: ElementRef) {
   }
 
   ngOnInit() {

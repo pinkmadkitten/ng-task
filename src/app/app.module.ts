@@ -7,6 +7,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { SearchComponent } from './courses/search/search.component';
 import { CourseComponent } from './courses/course/course.component';
 import { FooterComponent } from './footer/footer.component';
+import { CoursePlateDirective } from './course-plate.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     CoursesComponent,
     SearchComponent,
     CourseComponent,
-    FooterComponent
+    FooterComponent,
+    CoursePlateDirective
   ],
   imports: [
     BrowserModule

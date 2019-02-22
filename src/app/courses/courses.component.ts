@@ -17,23 +17,26 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
       {
         id: 0,
         description: 'meow meow meow meow meow meow',
-        creationDate: new Date(),
+        creationDate: new Date('02/18/2019'),
         duration: 26,
-        title: 'Cat World'
+        title: 'Cat World',
+        color: 'lightblue'
       },
       {
         id: 1,
         description: 'meow? meow meow! meow? meow meow! meow? meow meow!',
-        creationDate: new Date(),
+        creationDate: new Date('01/25/2019'),
         duration: 38,
-        title: 'Cat World?'
+        title: 'Cat World?',
+        color: 'pink'
       },
       {
         id: 2,
         description: 'meow meow meow! meow meow meow! meow meow meow! meow meow meow!',
-        creationDate: new Date(),
+        creationDate: new Date('03/21/2019'),
         duration: 125,
-        title: 'Cat World!'
+        title: 'Cat World!',
+        color: 'grey'
       }
     ];
     console.log('onInit');
