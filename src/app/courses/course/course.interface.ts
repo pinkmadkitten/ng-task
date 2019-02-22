@@ -5,4 +5,5 @@ export interface CourseInterface {
   duration: number;
   description: string;
   color?: string;
+  topRated: boolean;
 }
