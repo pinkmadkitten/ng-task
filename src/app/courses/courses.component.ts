@@ -33,9 +33,16 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
   }
 
   onDelete(item: CourseInterface) {
-    console.log(`deleted`, item);
+    this.courseService.removeItem(item);
+    this.coursesList = this.courseService.getCourses();
+    this.defaultCourseList = [...this.coursesList];
   }
 
+  onEdit(id) {
+    this.courseService.updateItem(id, 'title', 'Blossom is awesome');
+    this.coursesList = this.courseService.getCourses();
+    this.defaultCourseList = [...this.coursesList];
+  }
 
   onLoadMore() {
     console.log('Load more');
@@ -43,7 +50,11 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
 
   onSearch(value: string) {
     this.coursesList = this.defaultCourseList.filter((item) => {
-     return item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+      return item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1;
     });
+  }
+
+  onAddCourse() {
+    this.courseService.createCourse(this.coursesList[0]);
   }
 }
