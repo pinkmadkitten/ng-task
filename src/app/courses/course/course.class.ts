@@ -6,4 +6,5 @@ export class CourseClass implements CourseInterface {
   creationDate: Date;
   duration: number;
   description: string;
+  topRated: boolean;
 }

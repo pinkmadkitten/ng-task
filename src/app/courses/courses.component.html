@@ -1,6 +1,6 @@
-<app-search></app-search>
+<app-search (searchChange)="onSearch($event)"></app-search>
 <div *ngIf="coursesList && coursesList.length > 0">
-<app-course *ngFor="let course of coursesList"
+<app-course *ngFor="let course of coursesList | orderBy:'creationDate'"
             [courseItem]="course"
             (deleteCourse)="onDelete($event)"
              [appCoursePlate]="course.creationDate">

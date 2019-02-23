@@ -8,6 +8,8 @@ import { SearchComponent } from './courses/search/search.component';
 import { CourseComponent } from './courses/course/course.component';
 import { FooterComponent } from './footer/footer.component';
 import { CoursePlateDirective } from './course-plate.directive';
+import { DurationPipe } from './duration.pipe';
+import { OrderByPipe } from './order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CoursePlateDirective } from './course-plate.directive';
     SearchComponent,
     CourseComponent,
     FooterComponent,
-    CoursePlateDirective
+    CoursePlateDirective,
+    DurationPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule

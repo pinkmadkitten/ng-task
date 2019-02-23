@@ -8,6 +8,7 @@ import {CourseInterface} from './course/course.interface';
 })
 export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
   coursesList: CourseInterface[];
+  defaultCourseList: CourseInterface[];
 
   constructor() {
   }
@@ -19,7 +20,7 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         description: 'meow meow meow meow meow meow',
         creationDate: new Date('02/18/2019'),
         duration: 26,
-        title: 'Cat World',
+        title: 'Dog World',
         color: 'lightblue',
         topRated: true
       },
@@ -28,7 +29,7 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         description: 'meow? meow meow! meow? meow meow! meow? meow meow!',
         creationDate: new Date('01/25/2019'),
         duration: 38,
-        title: 'Cat World?',
+        title: 'Cat Meow',
         color: 'pink',
         topRated: true
       },
@@ -42,6 +43,7 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         topRated: false
       }
     ];
+    this.defaultCourseList = [...this.coursesList];
     console.log('onInit');
   }
 
@@ -64,5 +66,11 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
 
   onLoadMore() {
     console.log('Load more');
+  }
+
+  onSearch(value: string) {
+    this.coursesList = this.defaultCourseList.filter((item) => {
+     return item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+    });
   }
 }
