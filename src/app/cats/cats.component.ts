@@ -22,9 +22,9 @@ export class CatsComponent implements OnInit, OnDestroy {
    this.factsAsync = this.ourFacts.getAllFacts();
   }
 
-  /*ngOnDestroy() {
-    this.factsSubscr.unsubscribe();
-  }*/
+  ngOnDestroy() {
+    // this.factsSubscr.unsubscribe();
+  }
 
 }
 
