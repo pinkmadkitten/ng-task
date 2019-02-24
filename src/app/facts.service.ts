@@ -15,6 +15,14 @@ export class FactsService {
   getAllFacts(): Observable<FactInterface[]> {
     return this.http.get<FactInterface[]>(`${BASE_URL}/facts`);
   }
+
+  getAllBreeds(): Observable<string[]> {
+    return this.http.get<string[]>(`${BASE_URL}/breeds`);
+  }
+
+  getRandomFact(breed: string): Observable<FactInterface> {
+    return this.http.get<FactInterface>(`${BASE_URL}/facts/${breed}`);
+  }
 }
 
 export interface FactInterface {

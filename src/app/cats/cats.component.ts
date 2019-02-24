@@ -8,18 +8,25 @@ import {Observable, Subscription} from 'rxjs';
   styleUrls: ['./cats.component.scss']
 })
 export class CatsComponent implements OnInit, OnDestroy {
-  facts: FactInterface[] = [];
-  factsSubscr: Subscription;
+  breedsAsync: Observable<string[]>;
   factsAsync: Observable<FactInterface[]>;
+  randomFact: FactInterface;
 
   constructor(private ourFacts: FactsService) {
   }
 
   ngOnInit() {
-   /* this.factsSubscr = this.ourFacts.getAllFacts().subscribe((data: FactInterface[]) => {
-      this.facts = data;
-    });*/
-   this.factsAsync = this.ourFacts.getAllFacts();
+    /* this.factsSubscr = this.ourFacts.getAllFacts().subscribe((data: FactInterface[]) => {
+       this.facts = data;
+     });*/
+    this.factsAsync = this.ourFacts.getAllFacts();
+    this.breedsAsync = this.ourFacts.getAllBreeds();
+  }
+
+  getRandomFact(breed: string) {
+    this.ourFacts.getRandomFact(breed).subscribe((data: FactInterface) => {
+      this.randomFact = data;
+      });
   }
 
   ngOnDestroy() {

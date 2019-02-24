@@ -2,3 +2,12 @@
   <h2>{{fact.header}}</h2>
   <p>{{fact.fact}}</p>
 </div>
+<button type="button"
+        *ngFor="let breed of breedsAsync | async"
+        (click)="getRandomFact(breed)">
+  Get random fact for {{breed}}
+</button>
+<div>
+  <h2>{{randomFact?.header}}</h2>
+  <p>{{randomFact?.fact}}</p>
+</div>
