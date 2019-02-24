@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { CoursePlateDirective } from './course-plate.directive';
 import { DurationPipe } from './duration.pipe';
 import { OrderByPipe } from './order-by.pipe';
+import { CatsComponent } from './cats/cats.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { OrderByPipe } from './order-by.pipe';
     FooterComponent,
     CoursePlateDirective,
     DurationPipe,
-    OrderByPipe
+    OrderByPipe,
+    CatsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

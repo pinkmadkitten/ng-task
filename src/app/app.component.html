@@ -1,3 +1,6 @@
 <app-header></app-header>
-<app-courses></app-courses>
+<button type="button" (click)="toggleCats()"> Toggle cats </button>
+<app-courses *ngIf="!showCats"></app-courses>
+<app-cats *ngIf="showCats"></app-cats>
 <app-footer></app-footer>
+
