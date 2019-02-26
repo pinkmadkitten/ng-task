@@ -6,4 +6,5 @@ export interface CourseInterface {
   description: string;
   color?: string;
   topRated: boolean;
+  url: string;
 }

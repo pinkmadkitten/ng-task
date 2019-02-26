@@ -6,7 +6,8 @@
               [courseItem]="course"
               (deleteCourse)="onDelete($event)"
               (edit)="onEdit($event)"
-              [appCoursePlate]="course.creationDate">
+              [appCoursePlate]="course.creationDate"
+  (showImage)="onShowImage($event)">
   </app-course>
   <button type="button"
           (click)="onLoadMore()">
@@ -15,4 +16,7 @@
 </div>
 <div *ngIf="!coursesList || coursesList.length === 0">
   <p> No Data. Fell free to add new Course!</p>
+</div>
+<div *ngIf="showCat">
+  <img src="{{imageLink}}">
 </div>

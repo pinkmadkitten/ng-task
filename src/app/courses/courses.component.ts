@@ -10,6 +10,8 @@ import {CoursesService} from '../courses.service';
 export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
   coursesList: CourseInterface[];
   defaultCourseList: CourseInterface[];
+  imageLink: string;
+  showCat: boolean;
 
   constructor(private courseService: CoursesService) {
   }
@@ -56,5 +58,15 @@ export class CoursesComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
 
   onAddCourse() {
     this.courseService.createCourse(this.coursesList[0]);
+  }
+
+  onShowImage(link: string) {
+    if (link === this.imageLink) {
+      this.showCat = false;
+      this.imageLink = '';
+    } else {
+      this.imageLink = link;
+      this.showCat = true;
+    }
   }
 }

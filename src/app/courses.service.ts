@@ -13,7 +13,8 @@ export class CoursesService {
       duration: 26,
       title: 'Dog World',
       color: 'lightblue',
-      topRated: true
+      topRated: true,
+      url: 'http://www.best-cat-art.com/images/scottish-fold-300x468.jpg'
     },
     {
       id: 1,
@@ -22,7 +23,8 @@ export class CoursesService {
       duration: 38,
       title: 'Cat Meow',
       color: 'pink',
-      topRated: true
+      topRated: true,
+      url: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/08/scottish-fold-detail.jpg?bust=1535567146&width=355'
     },
     {
       id: 2,
@@ -31,7 +33,8 @@ export class CoursesService {
       duration: 125,
       title: 'Cat World!',
       color: 'grey',
-      topRated: false
+      topRated: false,
+      url: 'http://images6.fanpop.com/image/photos/40400000/Sweet-Cat-cats-40483584-500-333.jpg'
     }
   ];
 

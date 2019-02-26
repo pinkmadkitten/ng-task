@@ -7,4 +7,5 @@ export class CourseClass implements CourseInterface {
   duration: number;
   description: string;
   topRated: boolean;
+  url: string;
 }

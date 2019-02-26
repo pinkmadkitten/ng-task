@@ -10,6 +10,7 @@ export class CourseComponent implements OnInit {
   @Input() courseItem: CourseInterface;
   @Output() deleteCourse: EventEmitter<CourseInterface> = new EventEmitter<CourseInterface>();
   @Output() edit: EventEmitter<number> = new EventEmitter<number>();
+@Output() showImage: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private el: ElementRef) {
   }
@@ -23,5 +24,9 @@ export class CourseComponent implements OnInit {
 
   onEdit() {
     this.edit.emit(this.courseItem.id);
+  }
+
+  onShowImage() {
+    this.showImage.emit(this.courseItem.url);
   }
 }
